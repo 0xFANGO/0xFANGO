@@ -1,12 +1,12 @@
+<img src="tinker.png" width="48" align="right" />
+
 ### Hey, I'm Fango 👋
 
 Frontend engineer × AI tinkerer. Building things that ship.
 
-Currently: teaching frontend engineering, experimenting with LLM-powered tools.
-
 ---
 
-#### 🖥️ Frontend
+#### Stack
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
@@ -18,13 +18,9 @@ Currently: teaching frontend engineering, experimenting with LLM-powered tools.
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
 
-#### 🧠 AI
-
 ![Anthropic](https://img.shields.io/badge/Anthropic-191919?style=flat-square&logo=anthropic&logoColor=white)
 ![Google Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=flat-square&logo=googlegemini&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white)
-
-#### ⚙️ Tools & Infra
 
 ![Node.js](https://img.shields.io/badge/Node.js-5FA04E?style=flat-square&logo=nodedotjs&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
@@ -33,10 +29,8 @@ Currently: teaching frontend engineering, experimenting with LLM-powered tools.
 ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 
-#### Recent Stuff
+#### Work
 
-- 🎬 [remotion-zerocost-template](https://github.com/0xFANGO/remotion-zerocost-template) — Zero-cost browser-side video rendering
-- 🤖 AI tools — Resume improver, YouTube summarizer, voice-over automation
-- 📦 Teaching — Package managers, Monorepo architecture, frontend engineering
+![MarsWave AI](https://img.shields.io/badge/MarsWave_AI-FF6B35?style=flat-square&logoColor=white) Frontend engineer. 100+ PRs on an AI audio/video platform. Features, UI, bug fixes, i18n.
 
 `0x` prefix is not a typo. I like hex.
