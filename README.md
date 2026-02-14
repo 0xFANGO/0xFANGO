@@ -29,6 +29,12 @@ Frontend engineer × AI tinkerer <img src="tinker.png" width="24" style="vertica
 
 #### Work
 
-![MarsWave AI](https://img.shields.io/badge/MarsWave_AI-FF6B35?style=flat-square&logoColor=white) Frontend engineer. 100+ PRs on an AI audio/video platform. Features, UI, bug fixes, i18n.
+![MarsWave AI](https://img.shields.io/badge/MarsWave_AI-FF6B35?style=flat-square&logoColor=white) Full Stack Engineer
+
+![TikTok](https://img.shields.io/badge/TikTok-000000?style=flat-square&logo=tiktok&logoColor=white) Front End Engineer
+
+![DiDi](https://img.shields.io/badge/DiDi-FF7B00?style=flat-square&logoColor=white) Front End Engineer
+
+![SF Express](https://img.shields.io/badge/SF_Express-000000?style=flat-square&logoColor=white) Front End Engineer
 
 `0x` prefix is not a typo. I like hex.
