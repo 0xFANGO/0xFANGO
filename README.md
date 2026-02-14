@@ -1,6 +1,6 @@
 ### Hey, I'm Fango 👋
 
-Frontend engineer × AI tinkerer <img src="tinker.png" width="24" style="vertical-align: middle;" />. Building things that ship.
+Fullstack engineer × AI tinkerer <img src="tinker.png" width="24" style="vertical-align: middle;" />. Building things that ship.
 
 ---
 
