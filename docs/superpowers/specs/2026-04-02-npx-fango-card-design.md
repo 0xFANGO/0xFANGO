@@ -101,14 +101,33 @@ fango-cli/
 
 - All content renders immediately on launch
 - Bottom links area supports up/down arrow key navigation
-- Press Enter to open selected link in default browser
-- Press `q` or `Ctrl+C` to exit
+- Press Enter to open selected link in default browser; if `open` fails (e.g., headless/SSH session), print the URL to terminal so the user can copy it
+- Press `q` (global hotkey, always active) or `Ctrl+C` to exit
+- Card width: fixed at ~54 characters; Ink handles overflow gracefully in narrow terminals
 
 ## Data Layer (`data.ts`)
 
 All personal content is centralized in one file. Updating the card means editing only this file:
 
 ```ts
+interface Experience {
+  company: string;
+  location: string;
+  title: string;
+  from: string;
+  to: string;
+}
+
+interface Project {
+  name: string;
+  description: string;
+}
+
+interface Link {
+  label: string;
+  value: string;
+}
+
 export const profile = {
   name: 'Fango',
   title: 'Full Stack Engineer & AI Builder',
@@ -162,18 +181,48 @@ Wraps everything in an outer `<Box>` with round border, `flexDirection: 'column'
     "fango": "./dist/cli.js"
   },
   "files": ["dist"],
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
-    "build": "tsup source/cli.tsx --format esm --target node18",
+    "build": "tsup",
     "dev": "tsx source/cli.tsx"
+  },
+  "dependencies": {
+    "ink": "^5.0.0",
+    "ink-select-input": "^6.0.0",
+    "open": "^10.0.0",
+    "react": "^18.0.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0",
+    "@types/react": "^18.0.0"
   },
   "keywords": ["cli", "card", "terminal", "npx"],
   "license": "MIT"
 }
 ```
 
+### tsup.config.ts
+
+```ts
+import { defineConfig } from 'tsup';
+
+export default defineConfig({
+  entry: ['source/cli.tsx'],
+  format: ['esm'],
+  target: 'node18',
+  banner: { js: '#!/usr/bin/env node' },
+  // Do NOT externalize deps — bundle everything so npx works without install
+  noExternal: [/(.*)/],
+});
+```
+
 ## Build & Publish
 
-1. Build: `pnpm build` (tsup compiles TypeScript to dist/)
+1. Build: `pnpm build` (tsup bundles everything into dist/cli.js with shebang)
 2. Test locally: `node dist/cli.js` or `pnpm dev`
-3. Publish: `npm publish` (requires npm account with `fango` name available)
+3. Publish: `pnpm publish` (requires npm account with `fango` name available)
 4. Anyone can then run: `npx fango`
