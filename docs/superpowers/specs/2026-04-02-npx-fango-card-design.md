@@ -101,9 +101,19 @@ fango-cli/
 
 - All content renders immediately on launch
 - Bottom links area supports up/down arrow key navigation
-- Press Enter to open selected link in default browser; if `open` fails (e.g., headless/SSH session), print the URL to terminal so the user can copy it
+- Press Enter to open selected link via `open(href)`:
+  - On success: briefly show a dim "Opened!" hint next to the link, then reset after 1s
+  - On failure: print the raw URL below the card so the user can copy it
+  - Debounce: ignore repeated Enter within 500ms to prevent double-opens
 - Press `q` (global hotkey, always active) or `Ctrl+C` to exit
-- Card width: fixed at ~54 characters; Ink handles overflow gracefully in narrow terminals
+
+### Layout constraints
+
+- Outer box: fixed width of 54 characters (content area ~50 after padding)
+- Experience rows: company name truncated with `...` if > 20 chars; title truncated if > 22 chars
+- Project rows: description truncated with `...` to fit single line
+- Link display column: truncated with `...` if > 28 chars
+- Minimum terminal width: 54 cols. Below that, Ink's native wrapping applies — no custom handling needed
 
 ## Data Layer (`data.ts`)
 
@@ -124,8 +134,9 @@ interface Project {
 }
 
 interface Link {
-  label: string;
-  value: string;
+  label: string;    // Left column display text, e.g. "GitHub"
+  href: string;     // Actual URL to open, e.g. "https://github.com/0xFANGO"
+  display: string;  // Right column display text, e.g. "github.com/0xFANGO"
 }
 
 export const profile = {
@@ -145,9 +156,10 @@ export const projects: Project[] = [
 ];
 
 export const links: Link[] = [
-  { label: 'GitHub', value: 'https://github.com/0xFANGO' },
-  { label: 'Twitter', value: 'https://x.com/...' },
-  { label: 'Website', value: 'https://fango.dev' },
+  { label: 'GitHub', href: 'https://github.com/0xFANGO', display: 'github.com/0xFANGO' },
+  { label: 'Twitter', href: 'https://x.com/...', display: '@...' },
+  { label: 'Website', href: 'https://fango.dev', display: 'fango.dev' },
+  { label: 'Email', href: 'mailto:you@example.com', display: 'you@example.com' },
   // ... more entries
 ];
 ```
@@ -164,7 +176,7 @@ Round-bordered box with "Experience" title in red bold. Each entry shows company
 Round-bordered box with "Projects" title in red bold. Each entry shows project name (bold) followed by a dot separator and description (dim).
 
 ### `<Links links={[...]}/>`
-Uses `ink-select-input` for arrow-key navigation. Each item shows label (bold when selected) and URL. On select, calls `open(url)` to launch browser.
+Uses `ink-select-input` for arrow-key navigation. Each item renders `label` (bold when selected) + `display` text. On select, calls `open(href)` with debounce and success/failure feedback.
 
 ### `<App/>`
 Wraps everything in an outer `<Box>` with round border, `flexDirection: 'column'`, and padding. Composes Header, Experience, Projects, Links in order.
@@ -186,7 +198,8 @@ Wraps everything in an outer `<Box>` with round border, `flexDirection: 'column'
   },
   "scripts": {
     "build": "tsup",
-    "dev": "tsx source/cli.tsx"
+    "dev": "tsx source/cli.tsx",
+    "prepublishOnly": "pnpm build"
   },
   "dependencies": {
     "ink": "^5.0.0",
@@ -224,5 +237,15 @@ export default defineConfig({
 
 1. Build: `pnpm build` (tsup bundles everything into dist/cli.js with shebang)
 2. Test locally: `node dist/cli.js` or `pnpm dev`
-3. Publish: `pnpm publish` (requires npm account with `fango` name available)
+3. Publish: `pnpm publish` (`prepublishOnly` auto-runs build, prevents empty dist)
 4. Anyone can then run: `npx fango`
+
+## Acceptance Criteria
+
+- [ ] `npx fango` renders the full card (header, experience, projects, links) without errors
+- [ ] Arrow keys navigate the links list; Enter opens the selected link in browser
+- [ ] If `open()` fails, the raw URL is printed to terminal
+- [ ] Card renders cleanly in a 54-column terminal (no overflow or broken borders)
+- [ ] `q` and `Ctrl+C` both exit cleanly
+- [ ] `pnpm publish` without manual `pnpm build` still produces a working package (via `prepublishOnly`)
+- [ ] All personal data lives in `data.ts` only — no hardcoded strings in components
