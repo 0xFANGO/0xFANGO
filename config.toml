@@ -1,0 +1,38 @@
+base_url = "https://fango.blog"
+title = "0xFANGO"
+description = "Full Stack Engineer × AI Builder"
+author = "0xFANGO"
+compile_sass = true
+minify_html = true
+theme = "hacker"
+generate_feeds = false
+
+[markdown]
+render_emoji = true
+bottom_footnotes = true
+external_links_target_blank = true
+
+[markdown.highlighting]
+theme = "github-dark"
+
+[extra]
+edit_page = false
+language_code = "en-US"
+monitor = false
+opengraph = true
+title_separator = "|"
+
+menu = [
+  { url = "/", name = "About" },
+  { url = "projects", name = "Projects" },
+]
+
+social_links = [
+  { platform = "github", user_id = "0xFANGO" },
+  { platform = "twitter", user_id = "TODO" },
+  { platform = "linkedin", user_id = "TODO" },
+]
+
+[extra.github]
+username = "0xFANGO"
+repo = "0xFANGO"
