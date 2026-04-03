@@ -18,6 +18,7 @@ theme = "github-dark"
 [extra]
 edit_page = false
 language_code = "en-US"
+logo = "favicon.svg"
 monitor = false
 opengraph = true
 title_separator = "|"
