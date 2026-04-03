@@ -64,7 +64,7 @@ Full Stack Engineer × AI Builder
 
 ### Page: About (Homepage, `/`)
 
-The landing page and default route. Contains:
+The landing page and default route. Content lives in `content/_index.md` directly — this is how Zola serves the root `/` path. Contains:
 
 1. **Intro paragraph** — brief self-introduction
 2. **Stack section** — tech stack listed with `>>` markers, grouped by category:
@@ -75,7 +75,9 @@ The landing page and default route. Contains:
 
 ### Page: Projects (`/projects`)
 
-Simple list layout, each project entry contains:
+A single Markdown page at `content/projects.md` with manually written project entries. This keeps it simple — no need for a Zola section with individual project files, since the list is short and curated.
+
+Each project entry contains:
 
 - **Project name** — clickable link (blue with glow)
 - **Language/tech tag** — right-aligned in grey
@@ -97,11 +99,14 @@ Entries separated by dashed emerald borders. Projects to include (initial):
 
 ### Theme Customization
 
-Fork or submodule zola-hacker, then override:
+Add zola-hacker as a git submodule, then override at the project level. Zola allows overriding theme SASS files by placing identically named files in the project's `sass/` directory — these take precedence over the theme's versions.
 
-1. **`sass/_default_colors.scss`** — replace `$amber: #ffbf00` with `$amber: #50c878` (the theme uses `$amber` as the primary accent variable throughout, so renaming is unnecessary — just change the value)
-2. **`config.toml`** — configure site metadata, navigation menu, social links
-3. **Content files** — write About and Projects pages in Markdown
+1. **`sass/_default_colors.scss`** — place in project root `sass/` to override the theme's version. Change `$amber: #ffbf00` to `$amber: #50c878`. The theme uses `$amber` as the primary accent variable throughout, so just changing the value is sufficient.
+2. **`sass/_custom.scss`** — add heading glow (`text-shadow`) and any other emerald-specific CSS tweaks. Import this from a project-level `sass/main.scss` that first imports the theme's main.scss, then appends custom styles.
+3. **`config.toml`** — configure site metadata, navigation menu, social links.
+4. **Content files** — write About (`_index.md`) and Projects page in Markdown.
+
+**Note:** If Zola's SASS override doesn't work cleanly with the theme's `@import` chain, fall back to forking the theme repo and modifying files directly.
 
 ### Key Config Changes (config.toml)
 
@@ -113,12 +118,13 @@ theme = "hacker"
 
 [extra]
 menu = [
-  { url = "about", name = "About" },
+  { url = "/", name = "About" },
   { url = "projects", name = "Projects" },
 ]
 social_links = [
-  { icon = "github", url = "https://github.com/0xFANGO", ... },
-  # etc.
+  { icon = "github", url = "https://github.com/0xFANGO", color = "/EAEAEA", shadow = "#EAEAEA" },
+  { icon = "x", url = "https://x.com/...", color = "/EAEAEA", shadow = "#EAEAEA", size = "18" },
+  { brand = "linkedin", url = "https://linkedin.com/in/...", color = "/0A66C2", shadow = "#0A66C2" },
 ]
 ```
 
@@ -135,14 +141,13 @@ social_links = [
 fango.blog/
 ├── config.toml
 ├── content/
-│   ├── _index.md          # redirect or landing
-│   └── pages/
-│       ├── about.md       # About page (homepage)
-│       └── projects.md    # Projects page
+│   ├── _index.md          # About page (homepage at /)
+│   └── projects.md        # Projects page (at /projects)
 ├── static/
-│   └── favicon.svg
+│   └── favicon.svg        # Simple emerald-themed SVG favicon
 ├── sass/
-│   └── _default_colors.scss   # emerald color override
+│   ├── _default_colors.scss   # Override theme colors (emerald)
+│   └── _custom.scss           # Heading glow, extra tweaks
 └── themes/
     └── hacker/            # zola-hacker as git submodule
 ```
