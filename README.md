@@ -1,6 +1,6 @@
 ### Hey, I'm Fango 👋
 
-Full Stack Engineer at [MarsWave AI](https://github.com/marswaveai), building <img src="listenhub.png" width="18" style="vertical-align: middle;" /> [ListenHub](https://listenhub.ai) — turn anything into podcasts, speech & video.
+Full Stack Engineer at [MarsWave AI](https://github.com/marswaveai), building [ListenHub](https://listenhub.ai) — turn anything into podcasts, speech & video.
 
 Previously Sr. Frontend Engineer at TikTok and DiDi.
 
