@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="444" viewBox="0 0 720 444" role="img" aria-label="$ npx fangge">
+  <defs>
+    <linearGradient id="sweep" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="720" y2="0">
+      <stop offset="0" stop-color="#0969da"/>
+      <stop offset="0.5" stop-color="#00b7c6"/>
+      <stop offset="1" stop-color="#0969da"/>
+      <animate attributeName="x1" values="-720;720" dur="3.2s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="0;1440" dur="3.2s" repeatCount="indefinite"/>
+    </linearGradient>
+    
+  </defs>
+
+  <!-- window -->
+  <rect x="0.5" y="0.5" width="719" height="443" rx="10" fill="#ffffff" stroke="#d0d7de"/>
+  <path d="M0.5 10.5 a10 10 0 0 1 10-10 h699 a10 10 0 0 1 10 10 v25.5 h-719 z" fill="#f6f8fa" stroke="#d0d7de"/>
+  <circle cx="22" cy="18.5" r="5.5" fill="#ff5f57"/>
+  <circle cx="40" cy="18.5" r="5.5" fill="#febc2e"/>
+  <circle cx="58" cy="18.5" r="5.5" fill="#28c840"/>
+  <text x="360" y="23" text-anchor="middle" font-family="'SFMono-Regular','Cascadia Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="12" fill="#59636e">fango@0x:~/0xFANGO</text>
+
+  <!-- $ npx fangge (typed) -->
+  <text x="24" y="64" font-family="'SFMono-Regular','Cascadia Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="14" xml:space="preserve" style="white-space:pre"><tspan fill="#1a7f37">$ </tspan><tspan fill="#1a7f37" display="none"><set attributeName="display" to="inline" begin="0.50s" fill="freeze"/>n</tspan><tspan fill="#1a7f37" display="none"><set attributeName="display" to="inline" begin="0.57s" fill="freeze"/>p</tspan><tspan fill="#1a7f37" display="none"><set attributeName="display" to="inline" begin="0.64s" fill="freeze"/>x</tspan><tspan fill="#1f2328" display="none"><set attributeName="display" to="inline" begin="0.71s" fill="freeze"/> </tspan><tspan fill="#1f2328" display="none"><set attributeName="display" to="inline" begin="0.78s" fill="freeze"/>f</tspan><tspan fill="#1f2328" display="none"><set attributeName="display" to="inline" begin="0.85s" fill="freeze"/>a</tspan><tspan fill="#1f2328" display="none"><set attributeName="display" to="inline" begin="0.92s" fill="freeze"/>n</tspan><tspan fill="#1f2328" display="none"><set attributeName="display" to="inline" begin="0.99s" fill="freeze"/>g</tspan><tspan fill="#1f2328" display="none"><set attributeName="display" to="inline" begin="1.06s" fill="freeze"/>g</tspan><tspan fill="#1f2328" display="none"><set attributeName="display" to="inline" begin="1.13s" fill="freeze"/>e</tspan><tspan fill="#1f2328">█<set attributeName="display" to="none" begin="1.35s" fill="freeze"/></tspan></text>
+
+  <!-- fetch spinner -->
+  <g display="none">
+    <set attributeName="display" to="inline" begin="1.45s" fill="freeze"/>
+    <set attributeName="display" to="none" begin="2.50s" fill="freeze"/>
+    <circle cx="31" cy="90" r="6" fill="none" stroke="#0969da" stroke-width="2" stroke-dasharray="28 10" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="rotate" from="0 31 90" to="360 31 90" dur="0.8s" repeatCount="indefinite"/>
+    </circle>
+    <text x="46" y="95" font-family="'SFMono-Regular','Cascadia Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="14" xml:space="preserve" style="white-space:pre" fill="#828b95">fetching fangge@latest …</text>
+  </g>
+
+  <!-- FANGO banner, sweeping gradient -->
+  <g>
+    <text x="24" y="100" font-family="'SFMono-Regular','Cascadia Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="16" xml:space="preserve" style="white-space:pre" fill="url(#sweep)" display="none"><set attributeName="display" to="inline" begin="2.60s" fill="freeze"/>███████╗ █████╗ ███╗   ██╗ ██████╗  ██████╗ </text><text x="24" y="117" font-family="'SFMono-Regular','Cascadia Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="16" xml:space="preserve" style="white-space:pre" fill="url(#sweep)" display="none"><set attributeName="display" to="inline" begin="2.67s" fill="freeze"/>██╔════╝██╔══██╗████╗  ██║██╔════╝ ██╔═══██╗</text><text x="24" y="134" font-family="'SFMono-Regular','Cascadia Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="16" xml:space="preserve" style="white-space:pre" fill="url(#sweep)" display="none"><set attributeName="display" to="inline" begin="2.74s" fill="freeze"/>█████╗  ███████║██╔██╗ ██║██║  ███╗██║   ██║</text><text x="24" y="151" font-family="'SFMono-Regular','Cascadia Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="16" xml:space="preserve" style="white-space:pre" fill="url(#sweep)" display="none"><set attributeName="display" to="inline" begin="2.81s" fill="freeze"/>██╔══╝  ██╔══██║██║╚██╗██║██║   ██║██║   ██║</text><text x="24" y="168" font-family="'SFMono-Regular','Cascadia Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="16" xml:space="preserve" style="white-space:pre" fill="url(#sweep)" display="none"><set attributeName="display" to="inline" begin="2.88s" fill="freeze"/>██║     ██║  ██║██║ ╚████║╚██████╔╝╚██████╔╝</text><text x="24" y="185" font-family="'SFMono-Regular','Cascadia Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="16" xml:space="preserve" style="white-space:pre" fill="url(#sweep)" display="none"><set attributeName="display" to="inline" begin="2.95s" fill="freeze"/>╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝  ╚═════╝ </text>
+  </g>
+
+  <!-- the card, in TypeScript -->
+  <text x="24" y="232" font-family="'SFMono-Regular','Cascadia Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="14" xml:space="preserve" style="white-space:pre" display="none"><set attributeName="display" to="inline" begin="3.27s" fill="freeze"/><tspan fill="#cf222e">const</tspan><tspan fill="#0550ae"> fango</tspan><tspan fill="#1f2328">: </tspan><tspan fill="#953800">Engineer</tspan><tspan fill="#1f2328"> = {</tspan></text><text x="24" y="253" font-family="'SFMono-Regular','Cascadia Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="14" xml:space="preserve" style="white-space:pre" display="none"><set attributeName="display" to="inline" begin="3.43s" fill="freeze"/><tspan fill="#0550ae">  role</tspan><tspan fill="#1f2328">: </tspan><tspan fill="#0a3069">"Full Stack @ MarsWave AI"</tspan><tspan fill="#1f2328">,</tspan></text><text x="24" y="274" font-family="'SFMono-Regular','Cascadia Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="14" xml:space="preserve" style="white-space:pre" display="none"><set attributeName="display" to="inline" begin="3.59s" fill="freeze"/><tspan fill="#0550ae">  building</tspan><tspan fill="#1f2328">: </tspan><tspan fill="#0a3069">"ListenHub 🎧"</tspan><tspan fill="#1f2328">,</tspan><tspan fill="#6e7781"> // → podcasts, speech &amp; video</tspan></text><text x="24" y="295" font-family="'SFMono-Regular','Cascadia Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="14" xml:space="preserve" style="white-space:pre" display="none"><set attributeName="display" to="inline" begin="3.75s" fill="freeze"/><tspan fill="#0550ae">  prev</tspan><tspan fill="#1f2328">: [</tspan><tspan fill="#0a3069">"TikTok"</tspan><tspan fill="#1f2328">, </tspan><tspan fill="#0a3069">"DiDi"</tspan><tspan fill="#1f2328">],</tspan></text><text x="24" y="316" font-family="'SFMono-Regular','Cascadia Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="14" xml:space="preserve" style="white-space:pre" display="none"><set attributeName="display" to="inline" begin="3.91s" fill="freeze"/><tspan fill="#0550ae">  stack</tspan><tspan fill="#1f2328">: [</tspan><tspan fill="#0a3069">"TypeScript"</tspan><tspan fill="#1f2328">, </tspan><tspan fill="#0a3069">"React"</tspan><tspan fill="#1f2328">, </tspan><tspan fill="#0a3069">"Node"</tspan><tspan fill="#1f2328">],</tspan></text><text x="24" y="337" font-family="'SFMono-Regular','Cascadia Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="14" xml:space="preserve" style="white-space:pre" display="none"><set attributeName="display" to="inline" begin="4.07s" fill="freeze"/><tspan fill="#0550ae">  likes</tspan><tspan fill="#1f2328">: </tspan><tspan fill="#8250df">0xC0FFEE</tspan><tspan fill="#1f2328">,</tspan><tspan fill="#6e7781"> // hex, obviously</tspan></text><text x="24" y="358" font-family="'SFMono-Regular','Cascadia Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="14" xml:space="preserve" style="white-space:pre" display="none"><set attributeName="display" to="inline" begin="4.23s" fill="freeze"/><tspan fill="#1f2328">};</tspan></text>
+
+  <!-- type-checked, naturally -->
+  <text x="24" y="390" font-family="'SFMono-Regular','Cascadia Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="14" xml:space="preserve" style="white-space:pre" display="none"><set attributeName="display" to="inline" begin="4.74s" fill="freeze"/><tspan fill="#1a7f37">✓ compiled with 0 errors</tspan><tspan fill="#828b95">   · strict: true</tspan></text>
+
+  <!-- fresh prompt, cursor blinks forever -->
+  <text x="24" y="420" font-family="'SFMono-Regular','Cascadia Mono',Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="14" xml:space="preserve" style="white-space:pre" display="none"><set attributeName="display" to="inline" begin="5.39s" fill="freeze"/><tspan fill="#1a7f37">$ </tspan><tspan fill="#1f2328">█<animate attributeName="opacity" values="1;0" keyTimes="0;0.5" calcMode="discrete" dur="1.2s" begin="5.39s" repeatCount="indefinite"/></tspan></text>
+</svg>
