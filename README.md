@@ -1,7 +1,7 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/hexdump-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/hexdump-light.svg">
-  <img alt="$ printf &quot;Hey, I'm Fango 👋&quot; | xxd" src="assets/hexdump-dark.svg" width="720">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/npx-fangge-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/npx-fangge-light.svg">
+  <img alt="$ npx fangge" src="assets/npx-fangge-dark.svg" width="720">
 </picture>
 
 ### Hey, I'm Fango 👋
