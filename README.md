@@ -4,7 +4,7 @@
   <img alt="$ npx fangge" src="assets/npx-fangge-dark.svg" width="720">
 </picture>
 
-### Hey, I'm Fango 👋
+### Hey, I'm Fangoooooo 👋
 
 Full Stack Engineer at [MarsWave AI](https://github.com/marswaveai), building [ListenHub](https://listenhub.ai) — turn anything into podcasts, speech & video.
 
