@@ -6,7 +6,7 @@
 
 ### Hey, I'm Fangoooooo 👋
 
-Full Stack Engineer at [MarsWave AI](https://github.com/marswaveai), building [ListenHub](https://listenhub.ai) — turn anything into podcasts, speech & video.
+Full Stack Engineer, formerly at [MarsWave AI](https://github.com/marswaveai), where I worked on [ListenHub](https://listenhub.ai) — turning content into podcasts, speech & video.
 
 Previously Sr. Frontend Engineer at TikTok and DiDi.
 
