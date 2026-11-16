@@ -176,7 +176,6 @@ def sleeve() -> str:
     y = 470 + cap + 34 + 52
     g += f'<line x1="74" y1="{y}" x2="{74 + width:.0f}" y2="{y}" stroke="{INK}" stroke-width="5"/>'
     g += text(LABEL, "FULL STACK ENGINEER", 76, y + 56, 28, INK, track=0.07)
-    g += text(LABEL, "SMALL TOOLS FOR AI AGENTS, AUDIO & VIDEO", 76, y + 100, 28, INK, track=0.07)
     parts.append(g + "</g>")
 
     # Credits along the foot, straight, like the small print on a sleeve.
@@ -186,8 +185,7 @@ def sleeve() -> str:
     parts.append(text(BODY, "PREVIOUSLY TIKTOK, DIDI", 70 + aw2 + 48, 950, 17, INK, 0.1))
 
     return svg(h, "".join(parts),
-               "Fangoooooo (0xFANGO): full stack engineer, small tools for AI agents, "
-               "audio and video. Formerly MarsWave AI / ListenHub, previously TikTok and DiDi.")
+               "Fangoooooo (0xFANGO): full stack engineer. Formerly MarsWave AI / ListenHub, previously TikTok and DiDi.")
 
 
 def main() -> None:
