@@ -31,6 +31,7 @@ AVATAR = ASSETS / "avatar.jpg"
 SPOT = "#F2A516"
 INK = "#15120E"
 CREAM = "#FFF4DC"
+GLASSES_GREY = "#9E9A92"  # the avatar's glasses
 # Where the avatar sits on the 1600x1000 poster: the face fully in frame,
 # the body cut by the right and bottom edges.
 AVATAR_X, AVATAR_Y, AVATAR_H = 690, -40, 1250
@@ -99,8 +100,8 @@ def duotone_avatar(height: int) -> tuple[str, int, int]:
     img = gray.resize(size, Image.LANCZOS).filter(ImageFilter.GaussianBlur(1.2))
     ink, spot = _rgb(INK), _rgb(SPOT)
     mid = tuple(round(a * 0.55 + b * 0.45) for a, b in zip(ink, spot))
-    # Levels picked by eye: outlines, hair and glasses go to ink, the jacket
-    # and trousers to the mid tone, the yellow ground and skin drop into the field.
+    # Levels picked by eye: outlines and hair go to ink, the jacket and
+    # trousers to the mid tone, the yellow ground and skin drop into the field.
     lut = [0 if v < 92 else 1 if v < 168 else 2 for v in range(256)]
     idx = img.point(lut)
     out = Image.new("P", img.size)
@@ -111,25 +112,23 @@ def duotone_avatar(height: int) -> tuple[str, int, int]:
     return base64.b64encode(buf.getvalue()).decode(), img.width, img.height
 
 
-# The avatar's glasses are a pale khaki frame that the duotone loses in the
-# field, so the poster redraws them at their own weight in cream. Corners are traced
-# in the 460px source image (assets/avatar.jpg) and scaled with the avatar.
+# The avatar's glasses are a thin grey frame, as light as the skin, so the
+# duotone loses them; the poster redraws them over the avatar in grey at their
+# own weight. Corners are traced in the 460px source (assets/avatar.jpg).
 GLASSES = [
-    [(193.8, 171.3), (256.3, 163.8), (255.0, 207.5), (198.8, 213.8)],  # left lens
-    [(263.8, 163.8), (317.5, 156.3), (320.0, 196.3), (268.8, 201.3)],  # right lens
+    [(192.5, 170.0), (255.0, 163.8), (257.5, 210.0), (200.0, 212.5)],  # left lens
+    [(262.5, 162.5), (315.0, 155.0), (317.5, 193.8), (270.0, 201.0)],  # right lens
 ]
-GLASSES_ARMS = [((256.3, 171.0), (263.8, 170.0)), ((193.8, 190.0), (176.0, 194.0))]
+GLASSES_ARMS = [((255.0, 165.0), (262.5, 163.8)), ((193.0, 190.0), (184.0, 191.0))]
 
 
 def glasses(x0: float, y0: float, scale: float) -> str:
-    """Thin pale frames like the avatar's own, with a hairline ink edge."""
     def pt(p):
         return f"{x0 + p[0] * scale:.1f},{y0 + p[1] * scale:.1f}"
     shapes = "".join(f'<polygon points="{" ".join(pt(p) for p in lens)}"/>' for lens in GLASSES)
     shapes += "".join(f'<polyline points="{pt(a)} {pt(b)}"/>' for a, b in GLASSES_ARMS)
-    layer = ('<g fill="none" stroke="{c}" stroke-width="{w}" '
-             'stroke-linejoin="round" stroke-linecap="round">' + shapes + "</g>")
-    return layer.format(c=INK, w=15) + layer.format(c=CREAM, w=9)
+    return (f'<g fill="none" stroke="{GLASSES_GREY}" stroke-width="{3.6 * scale:.1f}" '
+            f'stroke-linejoin="round" stroke-linecap="round">{shapes}</g>')
 
 
 def _rgb(hex_: str) -> tuple[int, int, int]:
