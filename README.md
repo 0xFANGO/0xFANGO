@@ -7,7 +7,7 @@ Full Stack Engineer, formerly at [MarsWave AI](https://github.com/marswaveai), w
 
 #### On rotation
 
-<img width="100%" alt="On the shelf: ChatGPT, Claude, Cursor, TypeScript, Go, React, magpie, Docker, pinky, Rust, LobeHub, Python, Arion, Cloudflare, Mole" src="https://spine.stv.pm/art/chatgpt,claude,cursor,typescript,go,react,magpie,docker,pinky,rust,lobehub,python,arion,cloudflare,mole.svg">
+<img width="100%" alt="On the shelf: ChatGPT, Claude, Cursor, TypeScript, Go, React, magpie, Docker, pinky, LobeHub, Python, Cloudflare, Raycast" src="https://spine.stv.pm/art/chatgpt,claude,cursor,typescript,go,react,magpie,docker,pinky,lobehub,python,cloudflare,raycast.svg">
 
 Say hi from your terminal: `npx fangge`
 
