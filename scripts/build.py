@@ -112,7 +112,7 @@ def duotone_avatar(height: int) -> tuple[str, int, int]:
 
 
 # The avatar's glasses are a pale khaki frame that the duotone loses in the
-# field, so the poster redraws them as heavy black frames. Corners are traced
+# field, so the poster redraws them at their own weight in cream. Corners are traced
 # in the 460px source image (assets/avatar.jpg) and scaled with the avatar.
 GLASSES = [
     [(193.8, 171.3), (256.3, 163.8), (255.0, 207.5), (198.8, 213.8)],  # left lens
@@ -121,13 +121,15 @@ GLASSES = [
 GLASSES_ARMS = [((256.3, 171.0), (263.8, 170.0)), ((193.8, 190.0), (176.0, 194.0))]
 
 
-def glasses(x0: float, y0: float, scale: float, weight: float = 22) -> str:
+def glasses(x0: float, y0: float, scale: float) -> str:
+    """Thin pale frames like the avatar's own, with a hairline ink edge."""
     def pt(p):
         return f"{x0 + p[0] * scale:.1f},{y0 + p[1] * scale:.1f}"
-    out = "".join(f'<polygon points="{" ".join(pt(p) for p in lens)}"/>' for lens in GLASSES)
-    out += "".join(f'<polyline points="{pt(a)} {pt(b)}"/>' for a, b in GLASSES_ARMS)
-    return (f'<g fill="none" stroke="{INK}" stroke-width="{weight}" '
-            f'stroke-linejoin="round" stroke-linecap="round">{out}</g>')
+    shapes = "".join(f'<polygon points="{" ".join(pt(p) for p in lens)}"/>' for lens in GLASSES)
+    shapes += "".join(f'<polyline points="{pt(a)} {pt(b)}"/>' for a, b in GLASSES_ARMS)
+    layer = ('<g fill="none" stroke="{c}" stroke-width="{w}" '
+             'stroke-linejoin="round" stroke-linecap="round">' + shapes + "</g>")
+    return layer.format(c=INK, w=15) + layer.format(c=CREAM, w=9)
 
 
 def _rgb(hex_: str) -> tuple[int, int, int]:
