@@ -7,11 +7,7 @@ Full Stack Engineer, formerly at [MarsWave AI](https://github.com/marswaveai), w
 
 #### On rotation
 
-<p>
-  <img width="9.5%" alt="Agents: Claude, ChatGPT" src="https://spine.stv.pm/shelf.svg?s=badge:claude&s=ChatGPT;sub=OpenAI;icon=none">
-  &nbsp;&nbsp;
-  <img width="48.2%" alt="Stack: TypeScript, React, Next.js, Node.js, Python, Cloudflare Workers, Vercel, Docker" src="https://spine.stv.pm/badge/typescript,react,next,node,python,workers,vercel,docker.svg">
-</p>
+<img width="100%" alt="On the shelf: ChatGPT, Claude, Cursor, TypeScript, Go, React, magpie, Docker, pinky, Rust, LobeHub, Python, Arion, Cloudflare, Mole" src="https://spine.stv.pm/art/chatgpt,claude,cursor,typescript,go,react,magpie,docker,pinky,rust,lobehub,python,arion,cloudflare,mole.svg">
 
 Say hi from your terminal: `npx fangge`
 
